@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavbarMinimal } from "./Navbar/Navbar";
 
 export const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<h1>hi</h1>} />
+                <Route path="/" element={<NavbarMinimal />} />
             </Routes>
         </BrowserRouter>
     );
