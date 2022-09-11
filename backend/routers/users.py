@@ -27,3 +27,8 @@ async def change_user(name, request: user.User):
 @router.delete('/{name}', status_code=status.HTTP_204_NO_CONTENT)
 async def delete_user(name):
     return users.delete_user(name)
+
+
+@router.get("/{name}", status_code=status.HTTP_200_OK)
+async def get_user_by_name(name):
+    return users.get_user(name)
