@@ -31,7 +31,7 @@ export const useStyles = createStyles((theme, _params) => ({
         "&:hover": {
             transition: "ease-in-out all 0.3s",
             cursor: "pointer",
-            backgroundColor: theme.colors.blue[1],
+            backgroundColor: theme.colors.blue[0],
             color: theme.colors.blue[5],
         },
     },

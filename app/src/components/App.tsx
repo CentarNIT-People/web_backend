@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavbarMinimal } from "./Navbar/Navbar";
+import { Home } from "./Home/Home";
 
 export const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<NavbarMinimal />} />
+                <Route path="/" element={<Home />} />
             </Routes>
         </BrowserRouter>
     );

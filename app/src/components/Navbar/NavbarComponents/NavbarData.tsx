@@ -1,7 +1,6 @@
-import { IconDeviceTv, IconSearch, IconMovie } from "@tabler/icons";
+import { IconHome2, IconUsers } from "@tabler/icons";
 
 export const mockdata = [
-    { icon: IconMovie, label: "Movies", path: "/" },
-    { icon: IconDeviceTv, label: "Series", path: "/series" },
-    { icon: IconSearch, label: "Search", path: "/search" },
+    { icon: IconHome2, label: "Home", path: "/" },
+    { icon: IconUsers, label: "Users", path: "/users" },
 ];
