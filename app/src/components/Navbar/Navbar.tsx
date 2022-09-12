@@ -21,7 +21,7 @@ export function NavbarMinimal() {
     return (
         <Navbar p="md" className={classes.nav}>
             <Navbar.Section className={classes.nav_section}>
-                <Stack spacing={45} className={classes.stack}>
+                <Stack spacing={20} className={classes.stack}>
                     {links}
                 </Stack>
             </Navbar.Section>
