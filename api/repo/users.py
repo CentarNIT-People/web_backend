@@ -1,4 +1,3 @@
-from this import d
 from fastapi import HTTPException, status
 from deta import Deta
 
@@ -15,7 +14,7 @@ def create_user(request):
 
 
 def change_user(request, name):
-    user = [x for x in db.fetch().items if x["key"] == name][0]
+    user = [x for x in db.fetch().items if x["name"] == name][0]
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"User with name {name} not found!")
@@ -28,3 +27,11 @@ def delete_user(name):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"User with name {name} not found!")
     return db.delete(user["key"])
+
+
+def get_user(name):
+    user = [x for x in db.fetch().items if x["name"] == name][0]
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"User with name {name} not found!")
+    return user
