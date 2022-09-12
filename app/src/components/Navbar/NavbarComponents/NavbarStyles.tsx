@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 export const useStyles = createStyles((theme, _params) => ({
     link: {
-        transition: "ease-in-out 0.25s all",
+        transition: "ease-in-out 0.2s all",
         width: 50,
         height: 50,
         borderRadius: theme.radius.md,

@@ -18,7 +18,7 @@ export const useStyles = createStyles((theme) => ({
                 ? `1px solid ${theme.colors.gray[5]}`
                 : `1px solid ${theme.colors.dark[0]}`,
         "&:hover": {
-            scale: "1.04",
+            scale: "1.03",
             cursor: "pointer",
             backgroundColor: theme.fn.variant({
                 variant: "light",
