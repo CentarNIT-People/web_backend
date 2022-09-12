@@ -1,5 +1,5 @@
 import { SimpleGrid } from "@mantine/core";
-import { IconAppWindow, IconUsers, IconNews } from "@tabler/icons";
+import { IconAppWindow, IconNews, IconUsers } from "@tabler/icons";
 import { useStyles } from "./HomeCardsStyles";
 import { CardItem } from "./CardItem";
 import { CardLink } from "./CardLink";

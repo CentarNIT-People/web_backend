@@ -45,7 +45,7 @@ export const useStyles = createStyles((theme) => ({
     },
     grid: {
         width: "100%",
-        height: "70%",
+        height: "75%",
         marginTop: "3%",
         padding: "0% 2%",
         "@media (max-width: 1200px)": {
