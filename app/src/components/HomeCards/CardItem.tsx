@@ -26,7 +26,9 @@ export const CardItem = ({
             </Card.Section>
 
             <Group position="apart" mt="md" mb="xs" className={classes.text}>
-                <Text weight={100}>{text}</Text>
+                <Text weight={200} size={20}>
+                    {text}
+                </Text>
                 <Button className={classes.button}>Visit</Button>
             </Group>
         </Card>

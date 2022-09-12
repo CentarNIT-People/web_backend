@@ -18,17 +18,17 @@ export const Cards = () => {
             ]}
         >
             <CardLink link="users">
-                <CardItem text="CentarNIT Users">
+                <CardItem text="Users">
                     <IconUsers size={150} stroke={0.2} />
                 </CardItem>
             </CardLink>
             <CardLink link="news">
-                <CardItem text="CentarNIT News">
+                <CardItem text="News">
                     <IconNews size={150} stroke={0.2} />
                 </CardItem>
             </CardLink>
             <CardLink link="projects">
-                <CardItem text="CentarNIT Projects">
+                <CardItem text="Projects">
                     <IconAppWindow size={150} stroke={0.2} />
                 </CardItem>
             </CardLink>
