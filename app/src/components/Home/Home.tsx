@@ -1,9 +1,9 @@
 import { Layout } from "../Layout/Layout";
-
+import { Cards } from "../HomeCards/HomeCards";
 export const Home = () => {
     return (
         <Layout>
-            <h1>Home</h1>
+            <Cards />
         </Layout>
     );
 };

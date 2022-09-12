@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 export const useStyles = createStyles((theme, _params) => ({
     link: {
-        transition: "ease-in-out 0.2s all",
+        transition: "ease-in-out 0.25s all",
         width: 50,
         height: 50,
         borderRadius: theme.radius.md,
@@ -15,8 +15,8 @@ export const useStyles = createStyles((theme, _params) => ({
                 : theme.colors.gray[9],
 
         "& child, &:hover": {
-            transform: "translateY(-1px)",
-            scale: "1.05",
+            transform: "translateY(-2px)",
+            scale: "1.04",
         },
     },
     path: {
@@ -27,12 +27,22 @@ export const useStyles = createStyles((theme, _params) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        color: theme.colors.blue[5],
+        color:
+            theme.colorScheme === "dark"
+                ? theme.colors.dark[0]
+                : theme.colors.gray[7],
+
         "&:hover": {
             transition: "ease-in-out all 0.3s",
             cursor: "pointer",
-            backgroundColor: theme.colors.blue[0],
-            color: theme.colors.blue[5],
+            backgroundColor: theme.fn.variant({
+                variant: "light",
+                color: theme.primaryColor,
+            }).background,
+            color: theme.fn.variant({
+                variant: "light",
+                color: theme.primaryColor,
+            }).color,
         },
     },
     nav: {
