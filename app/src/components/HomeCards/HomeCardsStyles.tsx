@@ -2,7 +2,10 @@ import { createStyles } from "@mantine/core";
 
 export const useStyles = createStyles((theme) => ({
     iconDiv: {
-        background: "white",
+        background:
+            theme.colorScheme === "dark"
+                ? theme.colors.dark[6]
+                : theme.white[0],
         padding: "10%",
         width: "100%",
         display: "flex",
@@ -10,7 +13,10 @@ export const useStyles = createStyles((theme) => ({
         alignItems: "center",
         height: "100%",
         transition: "ease-in-out 0.25s all",
-        borderBottom: "1px solid #dee2e6",
+        borderBottom:
+            theme.colorScheme === "dark"
+                ? `1px solid ${theme.colors.gray[5]}`
+                : `1px solid ${theme.colors.dark[0]}`,
         "&:hover": {
             scale: "1.04",
             cursor: "pointer",
