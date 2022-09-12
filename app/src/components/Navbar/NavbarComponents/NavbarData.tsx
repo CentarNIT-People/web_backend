@@ -11,5 +11,5 @@ export const mockdata = [
     { icon: IconUsers, label: "Users", path: "/users" },
     { icon: IconNews, label: "News", path: "/news" },
     { icon: IconAppWindow, label: "Projects", path: "/projects" },
-    { icon: IconSettings, label: "Settings", path: "/account" },
+    { icon: IconSettings, label: "Account", path: "/account" },
 ];

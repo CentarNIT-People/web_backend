@@ -46,7 +46,7 @@ export const useStyles = createStyles((theme) => ({
     grid: {
         width: "100%",
         height: "75vh",
-        marginTop: "3%",
+        marginTop: "2%",
         padding: "0% 2%",
         "@media (max-width: 1200px)": {
             marginTop: "5%",
