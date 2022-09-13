@@ -1,1 +1,1 @@
-{"id":"cdb9f52b-4b5d-4efa-bd80-68c8a50f833a","space":26161,"runtime":"python3.9","name":"api","path":"hvjvme","project":"a063wuxg","account":"144798365827","region":"eu-central-1","deps":["fastapi","deta","pydantic"],"envs":null,"public":true,"log_level":"off","cron":""}
+{"id":"cdb9f52b-4b5d-4efa-bd80-68c8a50f833a","space":26161,"runtime":"python3.9","name":"api","path":"hvjvme","project":"a063wuxg","account":"144798365827","region":"eu-central-1","deps":["fastapi","deta","pydantic","python-jose"],"envs":null,"public":true,"log_level":"off","cron":""}

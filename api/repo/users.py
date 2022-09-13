@@ -1,5 +1,6 @@
 from fastapi import HTTPException, status
 from deta import Deta
+from hashlib import sha256
 
 deta = Deta("a063wuxg_XANyaMGJ2N31vCkZaPv5NnD7J7SqPD5s")
 db = deta.Base("users")
@@ -10,7 +11,8 @@ def get_users():
 
 
 def create_user(request):
-    return db.put(dict(request), key=request.name)
+    request.password = sha256(request.password.encode('utf-8')).hexdigest()
+    return db.put(dict(request), key=request.username)
 
 
 def change_user(request, name):
