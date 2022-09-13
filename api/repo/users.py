@@ -16,7 +16,7 @@ def create_user(request):
 
 
 def change_user(request, name):
-    user = [x for x in db.fetch().items if x["name"] == name][0]
+    user = [x for x in db.fetch().items if x["username"] == name][0]
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"User with name {name} not found!")
@@ -24,7 +24,7 @@ def change_user(request, name):
 
 
 def delete_user(name):
-    user = [x for x in db.fetch().items if x["name"] == name][0]
+    user = [x for x in db.fetch().items if x["username"] == name][0]
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"User with name {name} not found!")
@@ -32,7 +32,7 @@ def delete_user(name):
 
 
 def get_user(name):
-    user = [x for x in db.fetch().items if x["name"] == name][0]
+    user = [x for x in db.fetch().items if x["username"] == name][0]
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"User with name {name} not found!")
