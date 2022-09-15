@@ -10,51 +10,79 @@ import {
     Group,
     Button,
 } from "@mantine/core";
-import { Layout } from "../Layout/Layout";
-
+import { useState } from "react";
+import axios from "axios";
+import { useStyles } from "./LoginStyles";
 export function Login() {
-    return (
-        <Layout>
-            <Container size={420} my={40} mt={90}>
-                <Title
-                    align="center"
-                    sx={(theme) => ({
-                        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-                        fontWeight: 900,
-                    })}
-                >
-                    Welcome back!
-                </Title>
-                <Text color="dimmed" size="sm" align="center" mt={5}>
-                    Do not have an account yet?{" "}
-                    <Anchor<"a"> href="/signup" size="sm">
-                        Create account
-                    </Anchor>
-                </Text>
+    const { classes } = useStyles();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [remember, setRemember] = useState("");
 
-                <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                    <TextInput
-                        label="Email"
-                        placeholder="you@mantine.dev"
-                        required
+    const handleClick = () => {
+        axios
+            .get(
+                `https://hvjvme.deta.dev/account/login?username=${username}&password=${password}`
+            )
+            .then((r) => {
+                if (remember === "true") {
+                    localStorage.setItem("username", username);
+                } else {
+                    sessionStorage.setItem("username", username);
+                }
+                window.location.reload();
+            })
+            .catch((msg) => {
+                alert("Invalid Credentials!");
+            });
+    };
+
+    return (
+        <Container size={420} my={40} className={classes.wrapper}>
+            <Title align="center" className={classes.title}>
+                Welcome back!
+            </Title>
+            <Text color="dimmed" size="sm" align="center" mt={5}>
+                Do not have an account yet?{" "}
+                <Anchor<"a"> href="register" size="sm">
+                    Create account
+                </Anchor>
+            </Text>
+
+            <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                <TextInput
+                    label="Username"
+                    placeholder="Your username"
+                    required
+                    onChange={(e) => {
+                        setUsername(e.target.value);
+                    }}
+                    value={username}
+                />
+                <PasswordInput
+                    label="Password"
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                    }}
+                    value={password}
+                    placeholder="Your password"
+                    required
+                    mt="md"
+                />
+                <Group position="apart" mt="md">
+                    <Checkbox
+                        label="Remember me"
+                        value={remember}
+                        onClick={() => setRemember("true")}
                     />
-                    <PasswordInput
-                        label="Password"
-                        placeholder="Your password"
-                        required
-                        mt="md"
-                    />
-                    <Group position="apart" mt="md">
-                        <Checkbox label="Remember me" />
-                        <Anchor<"a"> href="/support" size="sm">
-                            Forgot password?
-                        </Anchor>
-                    </Group>
-                    <Button fullWidth mt="xl">
-                        Sign in
-                    </Button>
-                </Paper>
-            </Container>
-        </Layout>
+                    <Anchor<"a"> href="/" size="sm">
+                        Back to dashboard
+                    </Anchor>
+                </Group>
+                <Button fullWidth mt="xl" onClick={handleClick}>
+                    Login
+                </Button>
+            </Paper>
+        </Container>
     );
 }

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Home/Home";
-import { Login } from "./Login/Login";
+import { Me } from "./Me/Me";
 import {
     MantineProvider,
     ColorSchemeProvider,
@@ -26,7 +26,7 @@ export const App = () => {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/account" element={<Login />} />
+                        <Route path="/account" element={<Me />} />
                     </Routes>
                 </BrowserRouter>
             </MantineProvider>
