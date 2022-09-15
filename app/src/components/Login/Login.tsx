@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { useStyles } from "./LoginStyles";
+import { Layout } from "../Layout/Layout";
 export function Login() {
     const { classes } = useStyles();
     const [username, setUsername] = useState("");
@@ -38,51 +39,53 @@ export function Login() {
     };
 
     return (
-        <Container size={420} my={40} className={classes.wrapper}>
-            <Title align="center" className={classes.title}>
-                Welcome back!
-            </Title>
-            <Text color="dimmed" size="sm" align="center" mt={5}>
-                Do not have an account yet?{" "}
-                <Anchor<"a"> href="register" size="sm">
-                    Create account
-                </Anchor>
-            </Text>
-
-            <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                <TextInput
-                    label="Username"
-                    placeholder="Your username"
-                    required
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                    }}
-                    value={username}
-                />
-                <PasswordInput
-                    label="Password"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }}
-                    value={password}
-                    placeholder="Your password"
-                    required
-                    mt="md"
-                />
-                <Group position="apart" mt="md">
-                    <Checkbox
-                        label="Remember me"
-                        value={remember}
-                        onClick={() => setRemember("true")}
-                    />
-                    <Anchor<"a"> href="/" size="sm">
-                        Back to dashboard
+        <Layout>
+            <Container size={420} my={40} className={classes.wrapper}>
+                <Title align="center" className={classes.title}>
+                    Welcome back!
+                </Title>
+                <Text color="dimmed" size="sm" align="center" mt={5}>
+                    Do not have an account yet?{" "}
+                    <Anchor<"a"> href="register" size="sm">
+                        Create account
                     </Anchor>
-                </Group>
-                <Button fullWidth mt="xl" onClick={handleClick}>
-                    Login
-                </Button>
-            </Paper>
-        </Container>
+                </Text>
+
+                <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                    <TextInput
+                        label="Username"
+                        placeholder="Your username"
+                        required
+                        onChange={(e) => {
+                            setUsername(e.target.value);
+                        }}
+                        value={username}
+                    />
+                    <PasswordInput
+                        label="Password"
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                        value={password}
+                        placeholder="Your password"
+                        required
+                        mt="md"
+                    />
+                    <Group position="apart" mt="md">
+                        <Checkbox
+                            label="Remember me"
+                            value={remember}
+                            onClick={() => setRemember("true")}
+                        />
+                        <Anchor<"a"> href="/" size="sm">
+                            Back to dashboard
+                        </Anchor>
+                    </Group>
+                    <Button fullWidth mt="xl" onClick={handleClick}>
+                        Login
+                    </Button>
+                </Paper>
+            </Container>
+        </Layout>
     );
 }

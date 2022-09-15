@@ -15,8 +15,8 @@ export const useStyles = createStyles((theme, _params) => ({
                 : theme.colors.gray[9],
 
         "& child, &:hover": {
-            transform: "translateY(-2px)",
-            scale: "1.04",
+            transform: "translateY(-1px)",
+            scale: "1.05",
         },
     },
     path: {

@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./Home/Home";
-import { Me } from "./Me/Me";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./routes";
+
 import {
     MantineProvider,
     ColorSchemeProvider,
@@ -24,10 +24,7 @@ export const App = () => {
                 withNormalizeCSS
             >
                 <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/account" element={<Me />} />
-                    </Routes>
+                    <AppRoutes />
                 </BrowserRouter>
             </MantineProvider>
         </ColorSchemeProvider>

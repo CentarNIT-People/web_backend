@@ -3,7 +3,7 @@ import { createStyles } from "@mantine/core";
 export const useStyles = createStyles((theme) => ({
     wrapper: {
         width: "100%",
-        height: "95vh",
+        height: "65vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
