@@ -25,7 +25,7 @@ def delete_article(title):
     article = [x for x in db.fetch().items if x["title"] == title][0]
     if not article:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Article with title {title} not found!")
+                            detail=f"Article with title: {title} not found!")
     return db.delete(article["key"])
 
 

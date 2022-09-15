@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 export const useStyles = createStyles((theme, _params) => ({
     link: {
-        transition: "ease-in-out 0.25s all",
+        transition: "ease-in-out 0.2s all",
         width: 50,
         height: 50,
         borderRadius: theme.radius.md,
@@ -15,8 +15,8 @@ export const useStyles = createStyles((theme, _params) => ({
                 : theme.colors.gray[9],
 
         "& child, &:hover": {
-            transform: "translateY(-2px)",
-            scale: "1.04",
+            transform: "translateY(-1px)",
+            scale: "1.05",
         },
     },
     path: {
