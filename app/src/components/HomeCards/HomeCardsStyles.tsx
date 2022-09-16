@@ -48,6 +48,8 @@ export const useStyles = createStyles((theme) => ({
         height: "20%",
         width: "100%",
         flexDirection: "column",
+        marginTop: theme.spacing.md,
+        marginBottom: theme.spacing.xs,
     },
     grid: {
         width: "100%",
@@ -67,5 +69,16 @@ export const useStyles = createStyles((theme) => ({
         "@media (max-width: 900px)": {
             display: "none",
         },
+    },
+    wrapper: {
+        width: "100%",
+        height: "100%",
+        padding: theme.spacing.lg,
+        boxShadow: theme.shadows.md,
+        borderRadius: theme.radius.md,
+    },
+    name: {
+        fontWeight: 200,
+        fontSize: 20,
     },
 }));
