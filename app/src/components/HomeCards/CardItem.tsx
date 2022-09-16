@@ -1,34 +1,20 @@
 import { Button, Card, Text, Group } from "@mantine/core";
 import { useStyles } from "./HomeCardsStyles";
 
-export const CardItem = ({
-    children,
-    text,
-}: {
+interface CardItemInterface {
     children: React.ReactNode | React.ReactNode[];
     text: string;
-}) => {
+}
+
+export const CardItem = (props: CardItemInterface) => {
     const { classes } = useStyles();
     return (
-        <Card
-            shadow="sm"
-            p="lg"
-            radius="md"
-            withBorder
-            style={{
-                width: "100%",
-                height: "100%",
-                padding: 0,
-            }}
-        >
+        <Card withBorder className={classes.wrapper}>
             <Card.Section className={classes.section}>
-                <div className={classes.iconDiv}>{children}</div>
+                <div className={classes.iconDiv}>{props.children}</div>
             </Card.Section>
-
-            <Group position="apart" mt="md" mb="xs" className={classes.text}>
-                <Text weight={200} size={20}>
-                    {text}
-                </Text>
+            <Group className={classes.text}>
+                <Text className={classes.name}>{props.text}</Text>
                 <Button className={classes.button}>Visit</Button>
             </Group>
         </Card>
