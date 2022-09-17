@@ -1,4 +1,4 @@
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, UploadFile
 from schemas import article
 from repo import news
 

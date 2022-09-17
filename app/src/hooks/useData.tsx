@@ -10,7 +10,6 @@ export const useData = (props: useDataInterface) => {
     useEffect(() => {
         axios.get(`https://hvjvme.deta.dev/${props.name}/`).then((r) => {
             setData(r.data);
-            console.log(r.data);
         });
     }, [props.name]);
     return data;

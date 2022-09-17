@@ -18,7 +18,7 @@ export const News = () => {
         <Layout>
             <div className={classes.wrapper}>
                 {data.length > 0 &&
-                    data.map((item: ItemInterface, index: number) => {
+                    data.map((item: ItemInterface) => {
                         return <NewsCard key={item.key} />;
                     })}
             </div>

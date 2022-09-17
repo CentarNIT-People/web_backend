@@ -14,7 +14,7 @@ interface NavbarLinkProps {
 export function NavbarLink({ path, icon: Icon, label }: NavbarLinkProps) {
     const { classes, cx } = useStyles();
     return (
-        <Tooltip label={label} position="right" transitionDuration={400}>
+        <Tooltip label={label} position="right" transitionDuration={500}>
             <UnstyledButton className={cx(classes.link)}>
                 <Link to={path} className={classes.path}>
                     <Icon stroke={0.75} size={25} />
