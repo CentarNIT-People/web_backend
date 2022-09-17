@@ -1,0 +1,4 @@
+deta
+fastapi
+pydantic
+python-jose

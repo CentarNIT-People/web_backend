@@ -1,0 +1,1 @@
+{"id":"7a5270d2-b503-496c-9539-a8f329fe8f2d","space":26161,"runtime":"python3.9","name":"backend","path":"orxdmz","project":"a063wuxg","account":"144798365827","region":"eu-central-1","deps":["deta","fastapi","pydantic","python-jose"],"envs":null,"public":true,"log_level":"off","cron":""}
