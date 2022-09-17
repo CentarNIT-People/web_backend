@@ -4,6 +4,7 @@ import { Me } from "./Me/Me";
 import { Project } from "./Projects/Projects";
 import { News } from "./News/News";
 import { Users } from "./Users/Users";
+import { Admin } from "./Admin/Admin";
 
 export const AppRoutes = () => {
     return (
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
             <Route path="/projects" element={<Project />} />
             <Route path="/news" element={<News />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/admin" element={<Admin />} />
         </Routes>
     );
 };

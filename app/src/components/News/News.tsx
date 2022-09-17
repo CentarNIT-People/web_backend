@@ -1,5 +1,7 @@
 import { useData } from "../../hooks/useData";
 import { Layout } from "../Layout/Layout";
+import { NewsCard } from "./NewsCard/NewsCard";
+import { useStyles } from "./NewsStyles";
 
 interface ItemInterface {
     author: string;
@@ -10,15 +12,18 @@ interface ItemInterface {
 }
 
 export const News = () => {
+    const { classes } = useStyles();
     const data: any = useData({ name: "news" });
     return (
         <Layout>
-            <div>
+            <div className={classes.wrapper}>
                 {data.length > 0 &&
-                    data.map((item: ItemInterface) => {
-                        return <h1 key={item.key}>{item.title}</h1>;
+                    data.map((item: ItemInterface, index: number) => {
+                        return <NewsCard key={item.key} />;
                     })}
             </div>
         </Layout>
     );
 };
+
+// index % 2
