@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from deta import Deta
 from fastapi.middleware.cors import CORSMiddleware
+from routers import users
 
-app = FastAPI()
 deta = Deta("a063wuxg_k8zsfQrTEriaLdJwXbGRrE5DfcQYuaXd")
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,6 +15,4 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-def home():
-    return "HI"
+app.include_router(users.router)
