@@ -12,12 +12,17 @@ export function UserCard(props: UserInfoActionProps) {
     const { classes } = useStyles();
     return (
         <Paper withBorder className={classes.wrapper}>
-            <Avatar src={props.avatar} size={120} radius={120} mx="auto" />
+            <Avatar
+                src={props.avatar}
+                className={classes.avatar}
+                size={120}
+                color="blue"
+            />
             <Text className={classes.title}>{props.name}</Text>
             <Text className={classes.desc}>
                 {props.email} • {props.job}
             </Text>
-            <Button className={classes.button}>Send message</Button>
+            <Button className={classes.button}>Visit Profile</Button>
         </Paper>
     );
 }

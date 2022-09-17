@@ -51,7 +51,7 @@ export function Login() {
                     </Anchor>
                 </Text>
 
-                <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                <Paper withBorder className={classes.paper}>
                     <TextInput
                         label="Username"
                         placeholder="Your username"
@@ -81,7 +81,7 @@ export function Login() {
                             Back to dashboard
                         </Anchor>
                     </Group>
-                    <Button fullWidth mt="xl" onClick={handleClick}>
+                    <Button className={classes.button} onClick={handleClick}>
                         Login
                     </Button>
                 </Paper>

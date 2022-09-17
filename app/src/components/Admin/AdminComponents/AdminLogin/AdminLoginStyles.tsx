@@ -13,4 +13,15 @@ export const useStyles = createStyles((theme) => ({
         fontFamily: `Greycliff CF, ${theme.fontFamily}`,
         fontWeight: 900,
     },
+    paper: {
+        boxShadow: theme.shadows.md,
+        padding: 30,
+        marginTop: 30,
+        borderRadius: theme.radius.md,
+        width: "80%",
+    },
+    button: {
+        width: "100%",
+        marginTop: theme.spacing.md,
+    },
 }));

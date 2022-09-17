@@ -23,7 +23,7 @@ export const Users = () => {
                                 name={item.username}
                                 email={item.email}
                                 job={"Developer"}
-                                avatar=""
+                                avatar="https://avatars.githubusercontent.com/u/107771640?v=4"
                             />
                         );
                     })}

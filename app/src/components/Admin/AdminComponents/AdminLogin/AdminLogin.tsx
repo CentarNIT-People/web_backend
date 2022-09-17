@@ -40,14 +40,7 @@ export function AdminLogin(props: AdminLoginInterface) {
                 <Title align="center" className={classes.title}>
                     Welcome back!
                 </Title>
-                <Paper
-                    withBorder
-                    shadow="md"
-                    p={30}
-                    mt={30}
-                    radius="md"
-                    style={{ width: "80%" }}
-                >
+                <Paper withBorder className={classes.paper}>
                     <TextInput
                         label="Username"
                         placeholder="Your username"
@@ -67,7 +60,7 @@ export function AdminLogin(props: AdminLoginInterface) {
                         required
                         mt="md"
                     />
-                    <Button fullWidth mt="xl" onClick={handleClick}>
+                    <Button className={classes.button} onClick={handleClick}>
                         Login
                     </Button>
                 </Paper>
