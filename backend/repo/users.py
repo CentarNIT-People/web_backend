@@ -13,7 +13,8 @@ def create_user(request):
 
 
 def find_user(username):
-    return db.fetch({"name": username}).items[0] if db.fetch({"name": username}).items[0] else 404
+    user = db.get(username)
+    return user if user else 404
 
 
 def change_user(request):
