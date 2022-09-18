@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from deta import Deta
 from fastapi.middleware.cors import CORSMiddleware
-from routers import users
+from routers import users, auth
 
 deta = Deta("a063wuxg_k8zsfQrTEriaLdJwXbGRrE5DfcQYuaXd")
 app = FastAPI()
@@ -14,5 +14,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+app.include_router(auth.router)
 app.include_router(users.router)

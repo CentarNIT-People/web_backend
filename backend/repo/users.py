@@ -1,4 +1,5 @@
 from deta import Deta
+from hashlib import sha256
 
 deta = Deta("a063wuxg_k8zsfQrTEriaLdJwXbGRrE5DfcQYuaXd")
 db = deta.Base("users")
@@ -9,6 +10,7 @@ def get_all():
 
 
 def create_user(request):
+    request.password = sha256(request.password.encode("utf-8")).hexdigest()
     return db.put(dict(request), key=request.username)
 
 
