@@ -2,6 +2,7 @@ from deta import Deta
 from hashlib import sha256
 import httpx
 from collections import Counter
+from .getip import getIp
 
 deta = Deta("a063wuxg_k8zsfQrTEriaLdJwXbGRrE5DfcQYuaXd")
 db = deta.Base("users")
@@ -22,6 +23,8 @@ def create_user(request):
     request.languages = sorted(
         percentages, key=lambda d: d['percentage'])[::-1][0:3]
     request.password = sha256(request.password.encode("utf-8")).hexdigest()
+    request.flag = "https://countryflagsapi.com/svg/rs"
+    request.ip = getIp()
     return db.put(dict(request), key=request.username)
 
 
