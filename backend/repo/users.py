@@ -24,7 +24,10 @@ def create_user(request):
         percentages, key=lambda d: d['percentage'])[::-1][0:3]
     request.password = sha256(request.password.encode("utf-8")).hexdigest()
     request.flag = "https://countryflagsapi.com/svg/rs"
-    request.ip = getIp()
+    ip = getIp()
+    location_info = httpx.get(f"http://ip-api.com/json/{ip}").json()
+    request.country = location_info["country"]
+    request.city = location_info["city"]
     return db.put(dict(request), key=request.username)
 
 

@@ -12,7 +12,8 @@ class UserBase(BaseModel):
     avatar: str
     languages: list
     flag: str
-    ip: str
+    country: str
+    city: str
 
 
 class User(UserBase):
