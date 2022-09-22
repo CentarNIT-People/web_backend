@@ -19,13 +19,13 @@ def create_user(request):
 
     for name, pct in {x: int(float(y) / len(languages) * 100)
                       for x, y in Counter(languages).items()}.items():
-        percentages.append({"lang   uage": name, "percentage": pct})
+        percentages.append({"language": name, "percentage": pct})
     request.languages = sorted(
         percentages, key=lambda d: d['percentage'])[::-1][0:3]
     request.password = sha256(request.password.encode("utf-8")).hexdigest()
-    request.flag = "https://countryflagsapi.com/svg/rs"
+    request.flag = "rs"
     ip = getIp()
-    location_info = httpx.get(f"http://ip-api.com/json/{ip}").json()
+    location_info = httpx.get(f"http://ip-api.com/json/89.216.152.4").json()
     request.country = location_info["country"]
     request.city = location_info["city"]
     return db.put(dict(request), key=request.username)

@@ -1,5 +1,5 @@
-import requests
+import httpx
 
 
 def getIp():
-    return requests.get("https://api.ipify.org?format=json").json()["ip"]
+    return httpx.get("https://api.ipify.org?format=json").json()["ip"]
