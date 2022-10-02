@@ -6,7 +6,6 @@ router = APIRouter(
     tags=["Auth"]
 )
 
-
 @router.get("/login", status_code=status.HTTP_200_OK)
 async def login(username, password):
     return auth.login(username, password)
