@@ -1,8 +1,7 @@
-from deta import Deta
 from hashlib import sha256
+from deta import Base
 
-deta = Deta(os.getenv("DETA_PROJECT_KEY"))
-db = deta.Base("users")
+db = Base("users")
 
 
 def login(username, password):
