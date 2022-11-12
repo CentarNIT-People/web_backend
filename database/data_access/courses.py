@@ -1,5 +1,5 @@
-from database.db import connect_to_db
 from pymongo import ReturnDocument
+from database.db import connect_to_db
 
 db = connect_to_db("courses")
 
