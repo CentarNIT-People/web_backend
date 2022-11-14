@@ -23,6 +23,9 @@ class CoworkingLogic:
         item = self._parse_item(item, "floor_number")
         return data_layer.create_floor(item)
 
+    def delete_floor(self, floor_number: int):
+        return data_layer.delete_floor(floor_number)
+
     def create_table(self, floor_number: int, item: Table):
         parsed_item = self._parse_item(item, "table_number")
         return data_layer.create_table(floor_number, parsed_item)

@@ -12,6 +12,10 @@ def create_floor(item: Floor):
     return coworking_logic.create_floor(item)
 
 
+def delete_floor(floor_number: int):
+    return coworking_logic.delete_floor(floor_number)
+
+
 def get_floor_by_number(floor_number: int):
     return coworking_logic.get_floor_by_number(floor_number)
 

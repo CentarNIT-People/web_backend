@@ -62,8 +62,10 @@ class CoworkingLayer:
             if x["table_number"] == item["table_number"]:
                 if action == "assign":
                     x["people_in_table"].append(item["username"])
+                    floor["people"].append(item["username"])
                 elif action == "remove":
                     x["people_in_table"].remove(item["username"])
+                    floor["people"].remove(item["username"])
                 else:
                     return None
                 return db.find_one_and_update(
