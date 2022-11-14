@@ -3,7 +3,9 @@ from database.data_access.courses import CoursesLayer
 
 data_layer = CoursesLayer()
 
+
 class CoursesLogic:
+
     @staticmethod
     def _parse_course(course: Course):
         course = dict(course)

@@ -7,6 +7,7 @@ db = connect_to_db("users")
 
 
 class UsersLayer:
+
     def get_all_users(self) -> list[dict]:
         return db.find()
 
