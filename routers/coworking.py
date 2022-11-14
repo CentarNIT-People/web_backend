@@ -15,11 +15,14 @@ async def create_floor(request: Floor, background_tasks: BackgroundTasks):
     background_tasks.add_task(coworking.create_floor, request)
     return request
 
-
 @router.get("/{floor_number}", status_code=status.HTTP_200_OK)
 async def get_all_from_floor(floor_number: int):
     return coworking.get_floor_by_number(floor_number)
 
+@router.delete("/{floor_number}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_floor(floor_number: int, background_tasks: BackgroundTasks):
+    background_tasks.add_task(coworking.delete_floor, floor_number)
+    return {"message": "Floor deleted successfully"}
 
 @router.post("/{floor_number}/create_table",
              status_code=status.HTTP_201_CREATED)

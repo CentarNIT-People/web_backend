@@ -4,7 +4,6 @@ from pydantic import BaseModel
 class Floor(BaseModel):
     floor_number: int
     tables: list
-    people: list
 
 
 class Table(BaseModel):
