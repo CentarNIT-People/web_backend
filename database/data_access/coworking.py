@@ -2,7 +2,6 @@ from pymongo import ReturnDocument
 from database.db import connect_to_db
 from .users import *
 
-
 db = connect_to_db("coworking")
 
 
@@ -55,7 +54,10 @@ class CoworkingLayer:
         floor = self.get_floor_by_number(floor_number)
         for x in floor["tables"]:
             if x["table_number"] == table_number:
-                users = [UsersLayer().get_user_by_username(username) for username in x["people_in_table"]]
+                users = [
+                    UsersLayer().get_user_by_username(username)
+                    for username in x["people_in_table"]
+                ]
                 return users
 
     def action_to_table(self, item: dict, action: str):
