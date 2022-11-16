@@ -1,6 +1,6 @@
 from pymongo import ReturnDocument
 from database.db import connect_to_db
-from .users import *
+from .users import UsersLayer
 
 db = connect_to_db("coworking")
 
