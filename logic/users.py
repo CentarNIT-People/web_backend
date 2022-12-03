@@ -36,7 +36,8 @@ class UserLogic:
             "languages": user["languages"],
             "avatar": user["avatar"],
             "is_active": user["is_active"],
-            "role": user["role"]
+            "role": user["role"],
+            "status": user["status"],
         }
 
         return user_in_db
