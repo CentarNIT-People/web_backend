@@ -56,20 +56,16 @@ async def hard_delete_course(course_name: str,
 @router.post("/{course_name}/assign", status_code=status.HTTP_202_ACCEPTED)
 async def assign_user_to_course(course_name,
                                 username,
-                                background_tasks: BackgroundTasks,
                                 _=Depends(allowed_roles)):
-    background_tasks.add_task(courses.assign_to_course, course_name, username)
-    return f"{username} added to {course_name}"
+    return courses.courses_action_on_user(course_name, username, "assign")
 
 
 @router.delete("/{course_name}/remove", status_code=status.HTTP_202_ACCEPTED)
 async def remove_user_from_course(course_name,
                                   username,
-                                  background_tasks: BackgroundTasks,
                                   _=Depends(allowed_roles)):
-    background_tasks.add_task(courses.remove_from_course, course_name,
-                              username)
-    return f"{username} removed from {course_name}"
+    return courses.courses_action_on_user(course_name, username, "assign")
+
 
 
 @router.get("/{course_name}/students", status_code=status.HTTP_200_OK)

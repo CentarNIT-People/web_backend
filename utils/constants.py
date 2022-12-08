@@ -254,5 +254,6 @@ COLORS = {
     "Zephir": "#118f9e",
     "Zig": "#ec915c",
     "ZIL": "#dc75e5",
-    "None": "gray"
+    "None": "gray",
+    "SCSS":"#b86991"
 }

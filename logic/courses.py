@@ -1,7 +1,9 @@
 from schemas.course import Course
+from database.data_access.users import UsersLayer
 from database.data_access.courses import CoursesLayer
 
 data_layer = CoursesLayer()
+users_layer = UsersLayer()
 
 
 class CoursesLogic:
@@ -33,16 +35,21 @@ class CoursesLogic:
 
     def get_students_from_course(self, course_name):
         return data_layer.get_course_by_name(course_name)["students"]
-
-    def assign_user_to_course(self, course_name, username):
+    
+    def courses_action_on_user(self, course_name, username, action):
         course = data_layer.get_course_by_name(course_name)
-        course["students"].append(username)
-        return data_layer.update_course(course)
-
-    def remove_user_from_course(self, course_name, username):
-        course = data_layer.get_course_by_name(course_name)
-        course["students"].remove(username)
-        return data_layer.update_course(course)
+        user = users_layer.get_user_by_username(username)
+        if action == "assign":
+            course["students"].append(username)
+            user["courses"].append(course_name)
+        elif action == "remove":
+            course["students"].remove(username)
+            user["courses"].remove(course_name)
+        else:
+            pass
+        users_layer.update_user("username", dict(user))
+        data_layer.update_course(course)
+        return "done"
 
     def add_lecture_to_course(self, course_name: str, lecture: dict):
         course = data_layer.get_course_by_name(course_name)

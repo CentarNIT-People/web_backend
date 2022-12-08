@@ -32,12 +32,8 @@ def get_students_from_course(course_name: str):
     return courses_logic.get_students_from_course(course_name)
 
 
-def assign_to_course(course_name: str, username: str):
-    return courses_logic.assign_user_to_course(course_name, username)
-
-
-def remove_from_course(course_name: str, username: str):
-    return courses_logic.remove_user_from_course(course_name, username)
+def courses_action_on_user(course_name: str, username: str, action: str):
+    return courses_logic.courses_action_on_user(course_name, username, action)
 
 
 def add_lecture(course_name: str, lecture: Lecture):
