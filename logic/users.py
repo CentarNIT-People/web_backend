@@ -38,6 +38,7 @@ class UserLogic:
             "is_active": user["is_active"],
             "role": user["role"],
             "status": user["status"],
+            "courses": user["courses"],
         }
 
         return user_in_db
