@@ -67,7 +67,6 @@ async def remove_user_from_course(course_name,
     return courses.courses_action_on_user(course_name, username, "assign")
 
 
-
 @router.get("/{course_name}/students", status_code=status.HTTP_200_OK)
 async def get_students_from_course(name: str):
     return courses.get_students_from_course(name)

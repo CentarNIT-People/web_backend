@@ -255,5 +255,5 @@ COLORS = {
     "Zig": "#ec915c",
     "ZIL": "#dc75e5",
     "None": "gray",
-    "SCSS":"#b86991"
+    "SCSS": "#b86991"
 }

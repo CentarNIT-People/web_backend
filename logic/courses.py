@@ -35,7 +35,7 @@ class CoursesLogic:
 
     def get_students_from_course(self, course_name):
         return data_layer.get_course_by_name(course_name)["students"]
-    
+
     def courses_action_on_user(self, course_name, username, action):
         course = data_layer.get_course_by_name(course_name)
         user = users_layer.get_user_by_username(username)
