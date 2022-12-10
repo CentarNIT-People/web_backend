@@ -15,10 +15,8 @@ async def get_all_users() -> list:
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-async def create_user(request: user.User,
-                      background_tasks: BackgroundTasks) -> user.User or dict:
-    background_tasks.add_task(users.create_user, request)
-    return request
+async def create_user(request: user.User) -> user.User or dict:
+    return users.create_user(request)
 
 
 @router.get("/{username}", status_code=status.HTTP_200_OK)
