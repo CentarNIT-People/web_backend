@@ -4,7 +4,6 @@ from routers import users, admin, courses, messages, auth, coworking
 
 app = FastAPI()
 
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
